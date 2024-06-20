@@ -191,6 +191,8 @@ public class Server {
      * at the restricted positions, otherwise PASS to allow normal interaction.
      */
     public static ActionResult interact(PlayerEntity playerEntity, World world, Hand hand, BlockHitResult blockHitResult) {
+        System.out.println("### ONEBLOCKMAP ### getBlockPos: " + blockHitResult.getBlockPos() + " - getOneBlockPos: " + GameObject.getOneBlockPos());
+        
         // Don't allow block placement at OneBlock position
         if (blockHitResult.getBlockPos().equals(GameObject.getOneBlockPos())) {
             playerEntity.sendMessage(Text.of("Not allowed to place blocks at the One Block position."), true);
