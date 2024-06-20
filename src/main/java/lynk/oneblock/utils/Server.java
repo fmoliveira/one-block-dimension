@@ -43,10 +43,14 @@ public class Server {
             readSaveFile();
         };
         System.out.println("### ONEBLOCKMAP ### Server.start");
-        for (World e : server.getWorlds()) {
-            System.out.println("### ONEBLOCKMAP ### server.getWorlds()" + e.getDimension().toString());
+        for (World woof : server.getWorlds()) {
+            System.out.println("### ONEBLOCKMAP ### server.getWorlds() - world: >>" + woof.toString() + "<< - dimension: " + woof.getDimension().toString());
+            String levelDescription = woof.toString();
+            if (levelDescription.contains("oneblockmap")) {
+                System.out.println("### ONEBLOCKMAP ### MATCHED ONE BLOCK MAP DIMENSION!!!" + woof.toString());
+                respawnOneBlock(woof);
+            }
         }
-        // respawnOneBlock(server.getOverworld());
     }
 
     /**

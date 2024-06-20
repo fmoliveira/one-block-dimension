@@ -79,7 +79,7 @@ public class Oneblock implements ModInitializer {
 		PlayerBlockBreakEvents.AFTER.register((world, player, pos, state, entity) -> {
 			if(Objects.equals(pos, getOneBlockPos())){
 				System.out.println("### ONEBLOCKMAP ### Oneblock.PlayerBlockBreakEvents");
-				// handleOneBlockBreak(world);
+				handleOneBlockBreak(world);
 			}
 		});
 
