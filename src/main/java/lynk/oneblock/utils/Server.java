@@ -14,6 +14,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 
 import java.io.File;
 import java.util.Random;
@@ -41,7 +42,11 @@ public class Server {
         }else{
             readSaveFile();
         };
-        respawnOneBlock(server.getOverworld());
+        System.out.println("### ONEBLOCKMAP ### Server.start");
+        for (World e : server.getWorlds()) {
+            System.out.println("### ONEBLOCKMAP ### server.getWorlds()" + e.getDimension().toString());
+        }
+        // respawnOneBlock(server.getOverworld());
     }
 
     /**

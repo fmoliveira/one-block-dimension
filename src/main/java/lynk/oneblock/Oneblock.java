@@ -71,14 +71,15 @@ public class Oneblock implements ModInitializer {
 
 		ServerLifecycleEvents.SERVER_STARTED.register(Server::start);
 
-		ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
-			ServerPlayerEntity player = handler.player;
-			checkAndNotifySpawnPoint(player);
-		});
+		// ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
+		// 	ServerPlayerEntity player = handler.player;
+		// 	checkAndNotifySpawnPoint(player);
+		// });
 
 		PlayerBlockBreakEvents.AFTER.register((world, player, pos, state, entity) -> {
 			if(Objects.equals(pos, getOneBlockPos())){
-				handleOneBlockBreak(world);
+				System.out.println("### ONEBLOCKMAP ### Oneblock.PlayerBlockBreakEvents");
+				// handleOneBlockBreak(world);
 			}
 		});
 
